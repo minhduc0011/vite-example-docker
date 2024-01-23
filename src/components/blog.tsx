@@ -33,6 +33,15 @@ export default function BlogDialog({ id, open, onClose } : { id: number, open: b
                     <div style={{ paddingTop: '2rem' }}>
                         <TextField
                             fullWidth
+                            label="Title"
+                            multiline
+                            value={blog?.title || ''}
+                            onChange={v => blog ? setBlog({ ...blog, title: v.target.value }) : void 0}
+                        />
+                    </div>
+                    <div style={{ paddingTop: '2rem' }}>
+                        <TextField
+                            fullWidth
                             label="Body"
                             multiline
                             value={blog?.body || ''}
